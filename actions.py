@@ -85,7 +85,7 @@ class ActionRephraseResponse(Action):
                 show_article_data_form = show_article_data_form.replace('<NUM_FEATURE>',num_mapper[i+1])
 
                 dispatcher.utter_message(text = show_article_data_form)
-                dispatcher.utter_message(text = '날짜: ' + o[0] + '\n' +'제목글: '  + o[1])
+                dispatcher.utter_message(text = '날짜: %s\n제목글: %s' %(o[0],o[1]))
                 dispatcher.utter_message(text=o[2])
 
             dispatcher.utter_message(text=res[res["intent"]==self.intent]["utter_ask_more"].item())
